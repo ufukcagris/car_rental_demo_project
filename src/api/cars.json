@@ -1,0 +1,39 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "brand": "Ford",
+      "model": "Fiesta",
+      "plate": "35 AB 1234",
+      "color": "Beyaz"
+    },
+    {
+      "id": 2,
+      "brand": "Renault",
+      "model": "Clio",
+      "plate": "35 EU 9999",
+      "color": "Siyah"
+    },
+    {
+      "id": 3,
+      "brand": "Opel",
+      "model": "Corsa",
+      "plate": "34 FB 1907",
+      "color": "Kırmızı"
+    },
+    {
+      "id": 4,
+      "brand": "Volkswagen",
+      "model": "Polo",
+      "plate": "07 GS 1905",
+      "color": "Mavi"
+    },
+    {
+      "id": 5,
+      "brand": "Fiat",
+      "model": "Punto",
+      "plate": "10 BB 1357",
+      "color": "Yeşil"
+    }
+  ]
+}

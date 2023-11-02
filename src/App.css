@@ -1,38 +1,247 @@
-.App {
-  text-align: center;
-}
+/* React.js ile araba kiralama web sayfası için modern bir arayüz tasarımı */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Genel stiller */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  /* Arka plan rengi */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgba(82, 65, 65, 0.815);
+    padding: 20px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  /* Ortalama ve yuvarlatma */
+  .car-rental {
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
   }
-}
+  
+  /* Başlık stili */
+  .car-rental h1 {
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    background-color: #333333;
+    padding: 20px;
+  }
+  
+  /* Form ve liste bölümleri */
+  .car-rental-form,
+  .car-rental-list {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333333;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px; /* Bölümleri birbirinden ayırmak için alttan boşluk */
+    /* Modern bir çerçeve için gölge efekti */
+    box-shadow: 0px 2px 4px rgba(0,0,0,1);
+  }
+  
+  /* Form ve liste başlıkları */
+  .car-rental-form h2,
+  .car-rental-list h2 {
+    font-size: 24px;
+    font-weight: bold;
+  
+    /* Bölümleri ayırmak için alt çizgi */
+    border-bottom: solid #f0f0f0;
+  }
+
+  /* Başlık stilleri */
+  h1, h2 {
+    color: #333;
+  }
+  
+  h1 {
+    margin-bottom: 0.5em; /* Başlık altındaki boşluk */
+  }
+  
+  h2 {
+    margin-bottom: 1em; /* Alt başlık altındaki boşluk */
+  }
+  
+  /* Form grupları */
+  .form-group {
+    margin-bottom: 1em;
+  }
+  
+  /* Form etiketleri */
+  .form-group label {
+    display: ruby;
+
+    /* Etiket ile girdi arasındaki boşluk */
+    margin-bottom: .5em; 
+    /* Girdileri daha belirgin yapmak için kalın yazı */
+    font-weight:bold; 
+  }
+  
+  /* Form girdileri */
+  .form-group input,
+  .form-group select {
+      width: calc(100% - 2px); /* Tam genişlik ve kenarlık düzeltmesi */
+      padding: .5em;
+      border-radius: 4px; /* Yuvarlatılmış köşeler */ 
+      height:40px; 
+      border:none; 
+      outline:none; 
+  
+      /* Girdileri daha belirgin yapmak için iç gölge efekti */
+      box-shadow:inset -2px -2px rgba(0,0,0,0.1); 
+  }
+  
+  .rent-button {
+    background-color: #4CAF50; /* Yeşil arka plan rengi */
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .rent-button:hover {
+    background-color: #45a049; /* Buton üzerine gelince koyu yeşil renk */
+  }
+
+  .reset-page-button {
+    background-color: #4CAF50; /* Yeşil arka plan rengi */
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .reset-page-button:hover {
+    background-color: #45a049; /* Buton üzerine gelince koyu yeşil renk */
+  }
+  
+  /* Kiralanan araçlar listesi */
+  .car-rental-list ul {
+      list-style-type:none; 
+  }
+  
+  /* Kiralanan araçlar listesi elemanları */
+  .car-rental-list li {
+      margin-bottom:10px; 
+  
+       /* Listeyi daha modern yapmak için yuvarlatma ve iç gölge efekti */
+       border-radius:10px; 
+       box-shadow:-2px -2px rgba(0,0,0,0.1); 
+       padding-left:10px; 
+       padding-right:10px; 
+  }
+  
+  /* Detaylar ve teslim alındı butonları */
+ 
+  .car-rental-list button {
+      display:inline-block; 
+      height:30px; 
+      border:none; 
+      outline:none; 
+      background-color:#333333; 
+      color:white; 
+      padding-left:10px; 
+      padding-right:10px; 
+      text-decoration:none;
+  
+       /* Butonlara daha modern bir görünüm vermek için yuvarlatma ve dış gölge efekti */
+       border-radius:15px; 
+       box-shadow:-2px -2px rgba(0,0,0,0.1);  
+  }
+
+  /* Detaylar ve Teslim Alındı düğmelerini sağa hizala */
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  li button:first-child {
+    /* Diğer stil özellikleri burada */
+    margin-left: 200px; /* Sol boşluk ekleyin */
+  }
+  
+  /* Detaylar ve teslim alındı butonları üzerine gelince */
+  .car-rental-list a:hover,
+  .car-rental-list button:hover {
+      background-color:#555555; 
+  }
+  
+  /* Tarih seçme bileşenleri için özel stiller */
+  .form-group input[type="date"] {
+    /* Tarih seçme bileşenlerini daha kompakt yapmak için varsayılan görünümü kaldır */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  
+     /* Takvim ikonunu sağa hizala */
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: auto;
+  
+     /* Takvim ikonu için sağdan boşluk bırak */
+     padding-right:20px; 
+  }
+
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Sayfanın en üst katmanında olmasını sağlar */
+  }
+  
+  .popup-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Popup içeriğin en üst katmanda olmasını sağlar */
+  }
+
+  .popup-content p {
+    margin: 10px auto; /* Metinler arasında boşluk eklemek için */
+  }
+
+  .popup-content button {
+    background-color: #4CAF50; /* Yeşil arka plan rengi */
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .license-input {
+    position: relative;
+  }
+  
+  .license-counter {
+    position: absolute;
+    top: 5px; /* Sayacın yatay konumu */
+    right: 5px; /* Sayacın dikey konumu */
+    color: #555; /* Sayacın rengi */
+    font-size: 18px; /* Sayacın yazı tipi boyutu */
+  }
+  
