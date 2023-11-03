@@ -1,6 +1,18 @@
-# Getting Started with Create React App
+# Car Rental Project
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Screenshots
+
+![1](https://github.com/ufukcagris/car_rental_demo_project/assets/51057559/1cae9230-3432-4678-9ef1-b1b62233f55f)
+
+![2](https://github.com/ufukcagris/car_rental_demo_project/assets/51057559/b661cd24-4d27-456a-b42d-98d8fcce70bf)
+
+![teslim edildi](https://github.com/ufukcagris/car_rental_demo_project/assets/51057559/2ee531d8-36ac-4bd5-9684-14eb7942b948)
+
+![eksik ve yanlış giriş](https://github.com/ufukcagris/car_rental_demo_project/assets/51057559/9fd99320-62af-4d49-a172-eff4cb306c9d)
+
+
 
 ## Available Scripts
 
